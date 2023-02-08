@@ -123,8 +123,8 @@ latest support package to use this version of DSPLib with LEA."
 #define MSP_LEA_REVERT_ADDRESS(x)   ((uintptr_t)(((uint32_t)(x) << 2)))
 
 // Cast read-only registers to const to avoid compiler warnings.
-#define MSP_LEA_BOTTOM              (*((const uint16_t *)(&LEAMB)))
-#define MSP_LEA_TOP                 (*((const uint16_t *)(&LEAMT)))
+#define MSP_LEA_BOTTOM              (*((const unsigned long *)(&LEAMB)))
+#define MSP_LEA_TOP                 (*((const unsigned long *)(&LEAMT)))
 
 //******************************************************************************
 //
@@ -143,7 +143,7 @@ latest support package to use this version of DSPLib with LEA."
 //! \brief Check that the address is within the LEA RAM.
 //
 //******************************************************************************
-#define MSP_LEA_ALIGNED(x,n)        (!((uint32_t)(x) & ((n)-1)))
+#define MSP_LEA_ALIGNED(x,n)        (!((uintptr_t)(x) & ((n)-1)))
 
 //******************************************************************************
 //

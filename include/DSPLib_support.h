@@ -329,6 +329,7 @@ static inline void msp_checkStatus(msp_status status)
 }
 
 // Benchmark register support
+#pragma GCC diagnostic ignored "-Wint-to-pointer-cast"
 #define HWREG16(x)          (*((volatile uint16_t *)((uint16_t)x)))
 #define BENCHMARK_TAxR      (0x0010)
 #define BENCHMARK_TAxEX0    (0x0020)
