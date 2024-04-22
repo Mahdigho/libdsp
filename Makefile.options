@@ -1,0 +1,4 @@
+
+ifneq ($(LIBDSP_DIAGNOSTICS),)
+override CFLAGS += -DMSP_DISABLE_DIAGNOSTICS
+endif
